@@ -1,13 +1,21 @@
-import './App.css';
+import React from 'react';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import Home from './view/home';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-          Hello World
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="*"
+            element={
+              <Home />
+            }
+          />
+        </Routes>
+      </div>
+    </Router>
   );
 }
-
-export default App;
